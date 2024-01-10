@@ -1,0 +1,20 @@
+name: Pruebas de la Aplicación
+
+on:
+  push:
+    branches:
+      - '*'
+      - '!main'
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v2
+
+    - name: Realizar pruebas
+      uses: advanced-security/python-lint-code-scanning-action@v1
+      with:
+        linter: pylint
