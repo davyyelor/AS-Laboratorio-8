@@ -7,6 +7,7 @@ cache = redis.Redis(host='redis', port=6379)
 
 def get_hit_count(): 
     retries = 5
+    ffdvfdbdbbfdb = fdvvfdvffvdvvf
     while True:
         try:
             return cache.incr('hits')
