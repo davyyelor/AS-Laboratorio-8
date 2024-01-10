@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: bd-redis
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: bd-redis
+  template:
+    metadata:
+      labels:
+        name: bd-redis
+    spec:
+      containers:
+      - name: bd-redis
+        image: redis:alpine
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 6379
